@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package net.sf.cglib.proxy;
 
 import org.objectweb.asm.Type;
 
-class CallbackInfo
-{
+class CallbackInfo {
     public static Type[] determineTypes(Class[] callbackTypes) {
         return determineTypes(callbackTypes, true);
     }
@@ -56,15 +56,15 @@ class CallbackInfo
     private Class cls;
     private CallbackGenerator generator;
     private Type type;
-    
+
     private static final CallbackInfo[] CALLBACKS = {
-        new CallbackInfo(NoOp.class, NoOpGenerator.INSTANCE),
-        new CallbackInfo(MethodInterceptor.class, MethodInterceptorGenerator.INSTANCE),
-        new CallbackInfo(InvocationHandler.class, InvocationHandlerGenerator.INSTANCE),
-        new CallbackInfo(LazyLoader.class, LazyLoaderGenerator.INSTANCE),
-        new CallbackInfo(Dispatcher.class, DispatcherGenerator.INSTANCE),
-        new CallbackInfo(FixedValue.class, FixedValueGenerator.INSTANCE),
-        new CallbackInfo(ProxyRefDispatcher.class, DispatcherGenerator.PROXY_REF_INSTANCE),
+            new CallbackInfo(NoOp.class, NoOpGenerator.INSTANCE),
+            new CallbackInfo(MethodInterceptor.class, MethodInterceptorGenerator.INSTANCE),
+            new CallbackInfo(InvocationHandler.class, InvocationHandlerGenerator.INSTANCE),
+            new CallbackInfo(LazyLoader.class, LazyLoaderGenerator.INSTANCE),
+            new CallbackInfo(Dispatcher.class, DispatcherGenerator.INSTANCE),
+            new CallbackInfo(FixedValue.class, FixedValueGenerator.INSTANCE),
+            new CallbackInfo(ProxyRefDispatcher.class, DispatcherGenerator.PROXY_REF_INSTANCE),
     };
 
     private CallbackInfo(Class cls, CallbackGenerator generator) {
